@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Button from "./Button"
 
-function GuessControl(props) {
+function GuessControl({ onGuess }) {
   const [currentGuess, setCurrentGuess] = useState("")
 
   function handleInputChange(event) {
@@ -13,7 +13,7 @@ function GuessControl(props) {
     //  convert to a number for the returned guess value
     //  by passing in the string to the Number function.
     // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-    props.onGuess(Number(currentGuess))
+    onGuess(Number(currentGuess))
     setCurrentGuess("")
   }
 
